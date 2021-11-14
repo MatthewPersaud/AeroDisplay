@@ -6,7 +6,10 @@ namespace Aerodisplay
     {
         static void Main(string[] args)
         {
-            KollsmanWindow KW = new KollsmanWindow();
+            /*
+             * Code testing altimeter functionality
+             * 
+             * KollsmanWindow KW = new KollsmanWindow();
             AirDataComputer ADC = new AirDataComputer();
             Altimeter ALT = new Altimeter();
 
@@ -18,7 +21,7 @@ namespace Aerodisplay
                 Console.WriteLine(ALT.GetAltitude());
             }
             else
-                Console.WriteLine("Something went wrong");
+                Console.WriteLine("Something went wrong");*/
         }
     }
 }
