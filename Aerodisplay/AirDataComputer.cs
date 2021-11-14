@@ -38,7 +38,7 @@ namespace Aerodisplay
         {
             string[] lines = ReadData();
             int i = GetIndex();
-            int altitude = int.Parse(lines[i]);
+            int altitude = Int32.Parse(lines[i]);
 
             if (i == 59) //once we reach the end of the file...
                 SetIndex(0); //reset to the top

@@ -25,6 +25,7 @@ namespace Aerodisplay
         { //returns a bool, true if it was a success, false if it was a failure
             double newpressure;
             bool isDouble = double.TryParse(p, out newpressure);
+
             if (isDouble) //if this succeeds, then string p was a valid pressure
                 SetPressure(newpressure); //set the pressure to the altimeter
             return isDouble; 

@@ -7,13 +7,18 @@ namespace Aerodisplay
         static void Main(string[] args)
         {
             KollsmanWindow KW = new KollsmanWindow();
+            AirDataComputer ADC = new AirDataComputer();
+            Altimeter ALT = new Altimeter();
 
-            string p = "a";
-            bool b = KW.newPressure(p);
-            if (b)
-                Console.WriteLine(KW.GetPressure());
+            bool success = KW.newPressure("31.88");
+
+            if (success)
+            {
+                ALT.adjustAltitude(KW.GetPressure(), ADC.getAltitudeData());
+                Console.WriteLine(ALT.GetAltitude());
+            }
             else
-                Console.WriteLine("NOT A VALID NUMBER");
+                Console.WriteLine("Something went wrong");
         }
     }
 }
