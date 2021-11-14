@@ -6,7 +6,12 @@ namespace Aerodisplay
     {
         static void Main(string[] args)
         {
-            AirDataComputer.ReadData();
+            AirDataComputer ADC = new AirDataComputer();
+
+            for (int i = 0; i < 100; i++)
+            {
+                Console.WriteLine(ADC.getAltitudeData());
+            }
         }
     }
 }
