@@ -34,7 +34,7 @@ namespace Aerodisplay
             return lines;
         }
 
-        public int getAltitudeData()
+        public int getAltitudeData() //gets the current altitude from the ADC
         {
             string[] lines = ReadData();
             int i = GetIndex();

@@ -6,12 +6,14 @@ namespace Aerodisplay
     {
         static void Main(string[] args)
         {
-            AirDataComputer ADC = new AirDataComputer();
+            KollsmanWindow KW = new KollsmanWindow();
 
-            for (int i = 0; i < 100; i++)
-            {
-                Console.WriteLine(ADC.getAltitudeData());
-            }
+            string p = "a";
+            bool b = KW.newPressure(p);
+            if (b)
+                Console.WriteLine(KW.GetPressure());
+            else
+                Console.WriteLine("NOT A VALID NUMBER");
         }
     }
 }
