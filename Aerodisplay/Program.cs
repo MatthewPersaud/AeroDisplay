@@ -6,7 +6,7 @@ namespace Aerodisplay
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Controller.ascend(12000);
         }
     }
 }
