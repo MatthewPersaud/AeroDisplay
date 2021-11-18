@@ -6,22 +6,19 @@ namespace Aerodisplay
     {
         static void Main(string[] args)
         {
-            /*
-             * Code testing altimeter functionality
-             * 
-             * KollsmanWindow KW = new KollsmanWindow();
-            AirDataComputer ADC = new AirDataComputer();
+            
+             /* Code testing altimeter functionality
+
             Altimeter ALT = new Altimeter();
 
-            bool success = KW.newPressure("31.88");
+            KollsmanWindow k = ALT.GetKW();
+            bool success = k.newPressure("31.88");
 
             if (success)
-            {
-                ALT.adjustAltitude(KW.GetPressure(), ADC.getAltitudeData());
                 Console.WriteLine(ALT.GetAltitude());
-            }
             else
                 Console.WriteLine("Something went wrong");*/
+            
         }
     }
 }
