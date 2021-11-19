@@ -23,5 +23,8 @@ namespace Aerodisplay
         {
             desiredTemp = newTemp;
         }
+        public static int getTemp(){//return the temperature to the HMI
+            return desiredTemp;
+        }
     }
 }
