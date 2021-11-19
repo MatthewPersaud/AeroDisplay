@@ -12,7 +12,7 @@ namespace Aerodisplay
             InterriorPressureSensors.setPressureMod();
             turboFanEngine.setCurrentArray();
             Intercooler.changeDesTemp(22);
-            turboFanEngine.setDesired(14.6f * 1 + (desiredHeight / 3000));
+            turboFanEngine.setDesired(14.6f * 1 + (desiredHeight / 20000));
             OutflowValve.openValves();
             Intercooler.coolDown();
         }
