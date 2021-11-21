@@ -26,7 +26,7 @@ namespace AirspeedIndicator
             staticPressure = pressure;
         }
 
-        public void getRamAirPressure(float pressure)
+        public void modifyRamAirPressure(float pressure)
         {
             ramPressure = pressure;
         }
