@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace AirspeedIndicator
 {
     class AirspeedIndicator
@@ -41,7 +40,7 @@ namespace AirspeedIndicator
 
         public float calculateVelocity(float dynamicPressure)
         {
-            setVelocity((float)Math.Sqrt(((dynamicPressure * 2) / 1.23)));  //make 1.23 a constant?)
+            setVelocity((float)(Math.Sqrt((((dynamicPressure * 1000) * 2) / 1.23)) * 1.944));  //make 1.23 and 1.944 constants? Define it or something
             
             return getVelocity();
         }

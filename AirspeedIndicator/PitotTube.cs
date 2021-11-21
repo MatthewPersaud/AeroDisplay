@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirspeedIndicator
 {
-    class PitotTube
+    public class PitotTube
     {
         float ramPressure;
         float staticPressure;
