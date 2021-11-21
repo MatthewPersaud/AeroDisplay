@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace AirspeedIndicator
 {
+    static class Constants
+    {
+        public const double pressure = 1.23;
+        public const double velocityConvertion = 1.944; //conversion from metres/sec to knots
+    }
+
+
     class AirspeedIndicator
     {
-        float dynamicPressure;
-        float velocity;
+        float dynamicPressure = 0;
+        float velocity = 0;
 
         public float getDynamicPressure()
         {
@@ -40,7 +47,7 @@ namespace AirspeedIndicator
 
         public float calculateVelocity(float dynamicPressure)
         {
-            setVelocity((float)(Math.Sqrt((((dynamicPressure * 1000) * 2) / 1.23)) * 1.944));  //make 1.23 and 1.944 constants? Define it or something
+            setVelocity((float)(Math.Sqrt((((dynamicPressure * 1000) * 2) / Constants.pressure)) * Constants.velocityConvertion));
             
             return getVelocity();
         }

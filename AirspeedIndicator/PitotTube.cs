@@ -8,8 +8,8 @@ namespace AirspeedIndicator
 {
     public class PitotTube
     {
-        float ramPressure;
-        float staticPressure;
+        float ramPressure = 0;
+        float staticPressure = 50;
 
         public float getStaticAirPressure()
         {

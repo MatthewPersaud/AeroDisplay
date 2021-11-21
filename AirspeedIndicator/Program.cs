@@ -15,7 +15,7 @@ namespace AirspeedIndicator
 
 
             Console.WriteLine("\n\nstatic stuff...");
-            ptube.modifyStaticAirPressure(50);
+            ptube.modifyStaticAirPressure(57);
             Console.WriteLine("static pressure is {0}", ptube.getStaticAirPressure());
 
             
