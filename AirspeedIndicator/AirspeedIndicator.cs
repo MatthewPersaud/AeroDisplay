@@ -10,6 +10,8 @@ namespace AirspeedIndicator
     {
         public const double pressure = 1.23;
         public const double velocityConvertion = 1.944; //conversion from metres/sec to knots
+        public const int maxRamAirPressure = 105;
+        public const int minRamAirPressure = 40;
     }
 
 

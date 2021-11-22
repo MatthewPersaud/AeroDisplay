@@ -23,11 +23,20 @@ namespace AirspeedIndicator
 
         public void modifyStaticAirPressure(float pressure)
         {
-            staticPressure = pressure;
+            if(pressure > ramPressure)
+                staticPressure = ramPressure;
+
+            else if (pressure < 0)
+                    staticPressure = 0;
+
+            else
+                staticPressure = pressure;
         }
 
         public void modifyRamAirPressure(float pressure)
         {
+            
+
             ramPressure = pressure;
         }
     }

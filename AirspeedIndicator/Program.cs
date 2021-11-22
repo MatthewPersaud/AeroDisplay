@@ -8,7 +8,8 @@ namespace AirspeedIndicator
         {
             AirspeedIndicator air = new AirspeedIndicator();
             PitotTube ptube = new PitotTube();
-            
+
+            /*
             Console.WriteLine("ram stuff...");
             ptube.modifyRamAirPressure(100);
             Console.WriteLine("ram pressure is {0}", ptube.getRamAirPressure());
@@ -27,6 +28,25 @@ namespace AirspeedIndicator
             Console.WriteLine("\n\nvelocity stuff...");
             air.calculateVelocity(air.getDynamicPressure());
             Console.WriteLine("velocity is {0} knots", air.getVelocity());
+            */
+
+            ptube.modifyStaticAirPressure(57);
+
+            RamPressureData pressureData = new RamPressureData();
+            for (int i = 0; i < 10; i++)
+            {
+                ptube.modifyRamAirPressure(pressureData.getRamPressureData());
+
+                air.calculateDynamicPressure(ptube.getRamAirPressure(), ptube.getStaticAirPressure());
+                Console.WriteLine("\n\ndynamic pressure is {0}", air.getDynamicPressure());
+
+                air.calculateVelocity(air.getDynamicPressure());
+                Console.WriteLine("velocity is {0} knots", air.getVelocity());
+            }
+
+
+
+
         }
     }
 }
