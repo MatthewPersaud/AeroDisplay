@@ -35,7 +35,11 @@ namespace AirspeedIndicator
 
         public void modifyRamAirPressure(float pressure)
         {
-            
+            if (pressure > Constants.maxRamAirPressure)
+                ramPressure = Constants.maxRamAirPressure;
+
+            else if (pressure < Constants.minRamAirPressure)
+                ramPressure = Constants.minRamAirPressure;
 
             ramPressure = pressure;
         }
