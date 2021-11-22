@@ -8,12 +8,11 @@ namespace AirspeedIndicator
 {
     static class Constants
     {
-        public const double pressure = 1.23;
+        public const double pressure = 1.23; 
         public const double velocityConvertion = 1.944; //conversion from metres/sec to knots
-        public const int maxRamAirPressure = 105;
-        public const int minRamAirPressure = 40;
+        public const int maxRamAirPressure = 105;  //highest ram air pressure allowed in system
+        public const int minRamAirPressure = 40;   //lowest ram air pressure allowed in system
     }
-
 
     class AirspeedIndicator
     {
@@ -49,8 +48,9 @@ namespace AirspeedIndicator
 
         public float calculateVelocity(float dynamicPressure)
         {
+            //Calculation to find the velocity in knots
             setVelocity((float)(Math.Sqrt((((dynamicPressure * 1000) * 2) / Constants.pressure)) * Constants.velocityConvertion));
-            
+
             return getVelocity();
         }
     }
