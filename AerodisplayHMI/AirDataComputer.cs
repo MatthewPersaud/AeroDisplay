@@ -10,14 +10,14 @@ namespace AerodisplayHMI
 {
     class AirDataComputer
     {
-        int index = 0; //where in the data file we left off
+        static int index = 0; //where in the data file we left off
 
-        public int GetIndex()
+        static public int GetIndex()
         {
             return index;
         }
 
-        public void SetIndex(int i)
+        static public void SetIndex(int i)
         {
             index = i;
         }
@@ -34,7 +34,7 @@ namespace AerodisplayHMI
             return lines;
         }
 
-        public int getAltitudeData() //gets the current altitude from the ADC
+        public static int getAltitudeData() //gets the current altitude from the ADC
         {
             string[] lines = ReadData();
             int i = GetIndex();

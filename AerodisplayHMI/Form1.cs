@@ -15,6 +15,13 @@ namespace AerodisplayHMI
         public Form1()
         {
             InitializeComponent();
+            string val = Altimeter.GetAltitude().ToString();
+            altitudelabel.Text = val;
+        }
+
+        public void running()
+        {
+
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -37,9 +44,25 @@ namespace AerodisplayHMI
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e) //kollsmanwindow
         {
+            string value = kollsmanwindow.Text;
+            KollsmanWindow.newPressure(value);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (powerbutton.Text == "Take Off") //take off!
+            {
+                powerbutton.Text = "Land";
+                //call controller.ascend protocol
+                //then call controller.fly protocol?
+            }
+            else if (powerbutton.Text == "Land") //landing the plane!
+            {
+                powerbutton.Text = "Take Off";
+                // call Controller.descend() protocol
+            }
         }
     }
 }

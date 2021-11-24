@@ -17,14 +17,14 @@ namespace AerodisplayHMI
             Intercooler.coolDown();
         }
 
-        void fly() //set system to setting for flying
+        static public void fly() //set system to setting for flying
         {
             turboFanEngine.setDesired(determOptPres(turboFanEngine.checkPressure(), InterriorPressureSensors.checkInteriorPressure()));
             OutflowValve.openValves();
             Intercooler.coolDown();
         }
 
-        void descend() //set system to setting for going down
+        static public void descend() //set system to setting for going down
         {
             turboFanEngine.setDesired(14.6f);
             OutflowValve.openValves();
@@ -37,7 +37,7 @@ namespace AerodisplayHMI
             return lines;
         }
 
-        float determOptPres(float exteriorPressure, float interiorPressure) //determine the optimal pressure
+        static public float determOptPres(float exteriorPressure, float interiorPressure) //determine the optimal pressure
         {
             //this math was very complicated with the armstrong limit and comparing mbar to PSIa and PSI as well as yield strength so i gave up and made up math
             float differencePressure = exteriorPressure - interiorPressure;

@@ -8,20 +8,20 @@ namespace AerodisplayHMI
 {
     class KollsmanWindow
     {
-        double pressure = 29.92; //default Kollsman Window value
+        static double pressure = 29.92; //default Kollsman Window value
         //air pressure at sea level
 
-        public double GetPressure()
+        static public double GetPressure()
         {
             return pressure;
         }
 
-        public void SetPressure(double p)
+        static public void SetPressure(double p)
         {
             pressure = p;
         }
 
-        public bool newPressure(string p) //gets the value entered in the UI and sets the pressure
+        static public bool newPressure(string p) //gets the value entered in the UI and sets the pressure
         { //returns a bool, true if it was a success, false if it was a failure
             double newpressure;
             bool isDouble = double.TryParse(p, out newpressure);

@@ -42,6 +42,7 @@ namespace AerodisplayHMI
             this.temperaturelabel = new System.Windows.Forms.Label();
             this.kwlabel = new System.Windows.Forms.Label();
             this.altitudelabel = new System.Windows.Forms.Label();
+            this.powerbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.rampressure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staticpressure)).BeginInit();
             this.SuspendLayout();
@@ -161,6 +162,18 @@ namespace AerodisplayHMI
             this.altitudelabel.TabIndex = 15;
             this.altitudelabel.Text = "Altitude";
             // 
+            // powerbutton
+            // 
+            this.powerbutton.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.powerbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.powerbutton.Location = new System.Drawing.Point(75, 449);
+            this.powerbutton.Name = "powerbutton";
+            this.powerbutton.Size = new System.Drawing.Size(100, 68);
+            this.powerbutton.TabIndex = 16;
+            this.powerbutton.Text = "Take Off";
+            this.powerbutton.UseVisualStyleBackColor = false;
+            this.powerbutton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -169,6 +182,7 @@ namespace AerodisplayHMI
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(890, 553);
+            this.Controls.Add(this.powerbutton);
             this.Controls.Add(this.altitudelabel);
             this.Controls.Add(this.kwlabel);
             this.Controls.Add(this.temperaturelabel);
@@ -206,6 +220,7 @@ namespace AerodisplayHMI
         private System.Windows.Forms.Label temperaturelabel;
         private System.Windows.Forms.Label kwlabel;
         private System.Windows.Forms.Label altitudelabel;
+        private System.Windows.Forms.Button powerbutton;
     }
 }
 
