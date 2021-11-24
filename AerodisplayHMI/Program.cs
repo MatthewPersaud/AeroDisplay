@@ -17,6 +17,12 @@ namespace AerodisplayHMI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            Controller.ascend(12000);
+            int check = Intercooler.getTemp();
+            Controller.ascend(2000);
+            Altimeter a = new Altimeter();
+            a.GetAltitude();
         }
     }
 }
