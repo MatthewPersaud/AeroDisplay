@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aerodisplay", "Aerodisplay\Aerodisplay.csproj", "{7C8754D0-7290-441D-9F67-2A93A94A8724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aerodisplay", "Aerodisplay\Aerodisplay.csproj", "{7C8754D0-7290-441D-9F67-2A93A94A8724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AerodisplayHMI", "AerodisplayHMI\AerodisplayHMI.csproj", "{7FC418F8-4A06-47D8-9574-F609EA0B0B70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7C8754D0-7290-441D-9F67-2A93A94A8724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C8754D0-7290-441D-9F67-2A93A94A8724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C8754D0-7290-441D-9F67-2A93A94A8724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FC418F8-4A06-47D8-9574-F609EA0B0B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FC418F8-4A06-47D8-9574-F609EA0B0B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FC418F8-4A06-47D8-9574-F609EA0B0B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FC418F8-4A06-47D8-9574-F609EA0B0B70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

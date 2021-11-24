@@ -6,7 +6,6 @@ namespace Aerodisplay
     {
         static void Main(string[] args)
         {
-            Controller.ascend(12000);
         }
     }
 }
