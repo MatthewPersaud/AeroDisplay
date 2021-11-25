@@ -24,11 +24,11 @@ namespace AerodisplayHMI
         static public void modifyStaticAirPressure(float pressure)
         {
             //Checks that static air pressure is an acceptable value (less than ram air pressure and greater than 0)
-            if (pressure > ramPressure)
+            if(pressure > ramPressure)
                 staticPressure = ramPressure;
 
             else if (pressure < 0)
-                staticPressure = 0;
+                    staticPressure = 0;
 
             else
                 staticPressure = pressure;

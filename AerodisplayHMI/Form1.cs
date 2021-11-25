@@ -15,6 +15,24 @@ namespace AerodisplayHMI
         public Form1()
         {
             InitializeComponent();
+
+            RamPressureData.readRamPressureDataFile();
+            PitotTube pTube = new PitotTube();
+            AirspeedIndicator AIR = new AirspeedIndicator();
+        }
+
+        private void Application_Idle(object sender, EventArgs e)
+        {
+            string val = Altimeter.GetAltitude().ToString();
+            altitude.Text = val;
+
+            rampressure.Text = RamPressureData.getRamPressureData().ToString();
+            airspeedindicator.Text = AirspeedIndicator.calculateVelocity(AirspeedIndicator.calculateDynamicPressure(float.Parse(rampressure.Text), float.Parse(staticpressure.Text))).ToString();
+
+            Controller.fly();
+            string pressure = InterriorPressureSensors.checkInteriorPressure().ToString();
+            pressuredisplay.Text = pressure;
+
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -37,9 +55,51 @@ namespace AerodisplayHMI
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e) //kollsmanwindow
+        {
+            string value = kollsmanwindow.Text;
+            KollsmanWindow.newPressure(value);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (powerbutton.Text == "Take Off") //take off!
+            {
+                powerbutton.Text = "Land";
+                Controller.ascend(12000);
+                Application.Idle += Application_Idle;
+
+                rampressure.Text = RamPressureData.getRamPressureData().ToString();
+            }
+            else if (powerbutton.Text == "Land") //landing the plane!
+            {
+                powerbutton.Text = "Take Off";
+                Application.Idle -= Application_Idle;
+                Controller.descend();
+            }
+        }
+
+        private void airspeedindicator_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rampressure_ValueChanged(object sender, EventArgs e)
+        {
+            PitotTube.modifyRamAirPressure(float.Parse(rampressure.Text));
+            airspeedindicator.Text = AirspeedIndicator.calculateVelocity(AirspeedIndicator.calculateDynamicPressure(float.Parse(rampressure.Text), float.Parse(staticpressure.Text))).ToString();
+        }
+
+        private void staticpressure_ValueChanged(object sender, EventArgs e)
+        {
+            PitotTube.modifyStaticAirPressure(float.Parse(rampressure.Text));
+            airspeedindicator.Text = AirspeedIndicator.calculateVelocity(AirspeedIndicator.calculateDynamicPressure(float.Parse(rampressure.Text), float.Parse(staticpressure.Text))).ToString();
+        }
+
+        private void temperature_ValueChanged(object sender, EventArgs e)
+        {
+            int temp = Decimal.ToInt32(temperature.Value);
+            Intercooler.changeDesTemp(temp);
         }
     }
 }

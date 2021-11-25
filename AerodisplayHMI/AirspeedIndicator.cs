@@ -8,7 +8,7 @@ namespace AerodisplayHMI
 {
     static class Constants
     {
-        public const double pressure = 1.23;
+        public const double pressure = 1.23; 
         public const double velocityConvertion = 1.944; //conversion from metres/sec to knots
         public const int maxRamAirPressure = 105;  //highest ram air pressure allowed in system
         public const int minRamAirPressure = 40;   //lowest ram air pressure allowed in system
@@ -30,7 +30,7 @@ namespace AerodisplayHMI
         }
 
         static public float calculateDynamicPressure(float ramPressure, float staticPressure)
-        {
+        { 
             setDynamicPressure(ramPressure - staticPressure);
 
             return getDynamicPressure();
