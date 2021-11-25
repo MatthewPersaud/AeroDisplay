@@ -9,19 +9,19 @@ namespace AerodisplayHMI
 {
     public class RamPressureData
     {
-        int index = 0;
+        static int index = 0;
 
-        public int getIndex()
+        static public int getIndex()
         {
             return index;
         }
 
-        public void setIndex(int i)
+        static public void setIndex(int i)
         {
             index = i;
         }
 
-        public static string[] readRamPressureDataFile()
+        static public string[] readRamPressureDataFile()
         {
             string fileName = "DefaultRamPressureData.txt";
 
@@ -30,7 +30,7 @@ namespace AerodisplayHMI
             return lines;
         }
 
-        public float getRamPressureData()
+        static public float getRamPressureData()
         {
             string[] data = readRamPressureDataFile();
             int index = getIndex();

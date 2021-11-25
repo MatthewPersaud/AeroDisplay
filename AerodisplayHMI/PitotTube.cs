@@ -8,20 +8,20 @@ namespace AerodisplayHMI
 {
     public class PitotTube
     {
-        float ramPressure;
-        float staticPressure;
+        static float ramPressure;
+        static float staticPressure;
 
-        public float getStaticAirPressure()
+        static public float getStaticAirPressure()
         {
             return staticPressure;
         }
 
-        public float getRamAirPressure()
+        static public float getRamAirPressure()
         {
             return ramPressure;
         }
 
-        public void modifyStaticAirPressure(float pressure)
+        static public void modifyStaticAirPressure(float pressure)
         {
             //Checks that static air pressure is an acceptable value (less than ram air pressure and greater than 0)
             if(pressure > ramPressure)
@@ -34,7 +34,7 @@ namespace AerodisplayHMI
                 staticPressure = pressure;
         }
 
-        public void modifyRamAirPressure(float pressure)
+        static public void modifyRamAirPressure(float pressure)
         {
             //Checks that ram air pressure is an acceptable value (upper and lower limits are in the 'Constants' class)
             if (pressure > Constants.maxRamAirPressure)

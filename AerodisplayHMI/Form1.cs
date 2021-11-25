@@ -15,12 +15,19 @@ namespace AerodisplayHMI
         public Form1()
         {
             InitializeComponent();
+
+            RamPressureData.readRamPressureDataFile();
+            PitotTube pTube = new PitotTube();
+            AirspeedIndicator AIR = new AirspeedIndicator();
         }
 
         private void Application_Idle(object sender, EventArgs e)
         {
             string val = Altimeter.GetAltitude().ToString();
             altitude.Text = val;
+
+            rampressure.Text = RamPressureData.getRamPressureData().ToString();
+            airspeedindicator.Text = AirspeedIndicator.calculateVelocity(AirspeedIndicator.calculateDynamicPressure(float.Parse(rampressure.Text), float.Parse(staticpressure.Text))).ToString();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -56,9 +63,8 @@ namespace AerodisplayHMI
                 powerbutton.Text = "Land";
                 Controller.ascend(12000);
                 Application.Idle += Application_Idle;
-                //set static to 40
-                //ram will read from file
 
+                rampressure.Text = RamPressureData.getRamPressureData().ToString();
             }
             else if (powerbutton.Text == "Land") //landing the plane!
             {
@@ -66,6 +72,11 @@ namespace AerodisplayHMI
                 Application.Idle -= Application_Idle;
                 // call Controller.descend() protocol
             }
+        }
+
+        private void airspeedindicator_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

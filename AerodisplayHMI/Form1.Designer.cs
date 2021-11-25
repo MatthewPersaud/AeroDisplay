@@ -43,6 +43,8 @@ namespace AerodisplayHMI
             this.kwlabel = new System.Windows.Forms.Label();
             this.altitudelabel = new System.Windows.Forms.Label();
             this.powerbutton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rampressure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staticpressure)).BeginInit();
             this.SuspendLayout();
@@ -103,35 +105,69 @@ namespace AerodisplayHMI
             // 
             // rampressure
             // 
-            this.rampressure.Location = new System.Drawing.Point(359, 469);
+            this.rampressure.Location = new System.Drawing.Point(406, 469);
             this.rampressure.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rampressure.Maximum = new decimal(new int[] {
+            105,
+            0,
+            0,
+            0});
+            this.rampressure.Minimum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
             this.rampressure.Name = "rampressure";
-            this.rampressure.Size = new System.Drawing.Size(180, 30);
+            this.rampressure.Size = new System.Drawing.Size(100, 30);
             this.rampressure.TabIndex = 6;
+            this.rampressure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rampressure.Value = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
             // 
             // staticpressure
             // 
-            this.staticpressure.Location = new System.Drawing.Point(359, 509);
+            this.staticpressure.Location = new System.Drawing.Point(406, 509);
             this.staticpressure.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.staticpressure.Maximum = new decimal(new int[] {
+            105,
+            0,
+            0,
+            0});
+            this.staticpressure.Minimum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
             this.staticpressure.Name = "staticpressure";
-            this.staticpressure.Size = new System.Drawing.Size(180, 30);
+            this.staticpressure.Size = new System.Drawing.Size(100, 30);
             this.staticpressure.TabIndex = 7;
+            this.staticpressure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.staticpressure.Value = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
             // 
             // airspeedindicator
             // 
             this.airspeedindicator.AutoSize = true;
             this.airspeedindicator.BackColor = System.Drawing.Color.Transparent;
-            this.airspeedindicator.Location = new System.Drawing.Point(417, 438);
+            this.airspeedindicator.Location = new System.Drawing.Point(546, 491);
             this.airspeedindicator.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.airspeedindicator.Name = "airspeedindicator";
-            this.airspeedindicator.Size = new System.Drawing.Size(64, 25);
+            this.airspeedindicator.Size = new System.Drawing.Size(75, 25);
             this.airspeedindicator.TabIndex = 8;
-            this.airspeedindicator.Text = "label3";
+            this.airspeedindicator.Text = "0 knots";
+            this.airspeedindicator.Click += new System.EventHandler(this.airspeedindicator_Click);
             // 
             // ailabel
             // 
             this.ailabel.AutoSize = true;
-            this.ailabel.Location = new System.Drawing.Point(370, 392);
+            this.ailabel.BackColor = System.Drawing.Color.Transparent;
+            this.ailabel.Location = new System.Drawing.Point(366, 430);
             this.ailabel.Name = "ailabel";
             this.ailabel.Size = new System.Drawing.Size(169, 25);
             this.ailabel.TabIndex = 12;
@@ -176,6 +212,26 @@ namespace AerodisplayHMI
             this.powerbutton.UseVisualStyleBackColor = false;
             this.powerbutton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(265, 468);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Ram Pressure:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(257, 509);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 25);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Static Pressure:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -184,14 +240,16 @@ namespace AerodisplayHMI
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(890, 553);
+            this.Controls.Add(this.staticpressure);
+            this.Controls.Add(this.rampressure);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.powerbutton);
             this.Controls.Add(this.altitudelabel);
             this.Controls.Add(this.kwlabel);
             this.Controls.Add(this.temperaturelabel);
             this.Controls.Add(this.ailabel);
             this.Controls.Add(this.airspeedindicator);
-            this.Controls.Add(this.staticpressure);
-            this.Controls.Add(this.rampressure);
             this.Controls.Add(this.altitude);
             this.Controls.Add(this.kollsmanwindow);
             this.Controls.Add(this.pressuredisplay);
@@ -223,6 +281,8 @@ namespace AerodisplayHMI
         private System.Windows.Forms.Label kwlabel;
         private System.Windows.Forms.Label altitudelabel;
         private System.Windows.Forms.Button powerbutton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
