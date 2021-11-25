@@ -13,15 +13,27 @@ namespace AerodisplayHMI
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+        }
 
+        public static void StartPlane(Form1 form)
+        {
             Controller.ascend(12000);
-            int check = Intercooler.getTemp();
-            Controller.ascend(2000);
-            Altimeter.GetAltitude();
+            //bool flying = true;
+            int index = 42;
+
+            while (index > 0)
+            {
+                string val = Altimeter.GetAltitude().ToString();
+                form.adjustAlt(val);
+                index--;
+            }
+            //int check = Intercooler.getTemp();
+            //Controller.ascend(2000);
+            //Altimeter.GetAltitude();
         }
     }
 }

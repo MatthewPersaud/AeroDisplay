@@ -15,13 +15,11 @@ namespace AerodisplayHMI
         public Form1()
         {
             InitializeComponent();
-            string val = Altimeter.GetAltitude().ToString();
-            altitudelabel.Text = val;
         }
 
-        public void running()
+        public void adjustAlt(string newalt)
         {
-
+            altitude.Text = newalt;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -57,6 +55,8 @@ namespace AerodisplayHMI
                 powerbutton.Text = "Land";
                 //call controller.ascend protocol
                 //then call controller.fly protocol?
+                Program.StartPlane(this);
+                
             }
             else if (powerbutton.Text == "Land") //landing the plane!
             {
