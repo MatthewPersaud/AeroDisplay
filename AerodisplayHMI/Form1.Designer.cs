@@ -53,7 +53,7 @@ namespace AerodisplayHMI
             // interiorpressure
             // 
             this.interiorpressure.AutoSize = true;
-            this.interiorpressure.Location = new System.Drawing.Point(51, 215);
+            this.interiorpressure.Location = new System.Drawing.Point(70, 216);
             this.interiorpressure.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.interiorpressure.Name = "interiorpressure";
             this.interiorpressure.Size = new System.Drawing.Size(154, 25);
@@ -137,7 +137,7 @@ namespace AerodisplayHMI
             // airspeedindicator
             // 
             this.airspeedindicator.AutoSize = true;
-            this.airspeedindicator.BackColor = System.Drawing.Color.Transparent;
+            this.airspeedindicator.BackColor = System.Drawing.Color.White;
             this.airspeedindicator.Location = new System.Drawing.Point(546, 491);
             this.airspeedindicator.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.airspeedindicator.Name = "airspeedindicator";
@@ -149,7 +149,7 @@ namespace AerodisplayHMI
             // ailabel
             // 
             this.ailabel.AutoSize = true;
-            this.ailabel.BackColor = System.Drawing.Color.Transparent;
+            this.ailabel.BackColor = System.Drawing.Color.White;
             this.ailabel.Location = new System.Drawing.Point(366, 430);
             this.ailabel.Name = "ailabel";
             this.ailabel.Size = new System.Drawing.Size(169, 25);
@@ -159,7 +159,7 @@ namespace AerodisplayHMI
             // temperaturelabel
             // 
             this.temperaturelabel.AutoSize = true;
-            this.temperaturelabel.Location = new System.Drawing.Point(54, 354);
+            this.temperaturelabel.Location = new System.Drawing.Point(64, 354);
             this.temperaturelabel.Name = "temperaturelabel";
             this.temperaturelabel.Size = new System.Drawing.Size(151, 25);
             this.temperaturelabel.TabIndex = 13;
@@ -177,7 +177,7 @@ namespace AerodisplayHMI
             // altitudelabel
             // 
             this.altitudelabel.AutoSize = true;
-            this.altitudelabel.Location = new System.Drawing.Point(727, 200);
+            this.altitudelabel.Location = new System.Drawing.Point(737, 200);
             this.altitudelabel.Name = "altitudelabel";
             this.altitudelabel.Size = new System.Drawing.Size(77, 25);
             this.altitudelabel.TabIndex = 15;
@@ -217,7 +217,7 @@ namespace AerodisplayHMI
             // 
             // temperature
             // 
-            this.temperature.Location = new System.Drawing.Point(69, 390);
+            this.temperature.Location = new System.Drawing.Point(61, 394);
             this.temperature.Name = "temperature";
             this.temperature.Size = new System.Drawing.Size(120, 30);
             this.temperature.TabIndex = 19;
@@ -226,7 +226,7 @@ namespace AerodisplayHMI
             // pressuredisplay
             // 
             this.pressuredisplay.AutoSize = true;
-            this.pressuredisplay.Location = new System.Drawing.Point(69, 274);
+            this.pressuredisplay.Location = new System.Drawing.Point(61, 274);
             this.pressuredisplay.MinimumSize = new System.Drawing.Size(120, 0);
             this.pressuredisplay.Name = "pressuredisplay";
             this.pressuredisplay.Size = new System.Drawing.Size(120, 25);
