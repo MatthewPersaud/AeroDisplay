@@ -30,9 +30,7 @@ namespace AerodisplayHMI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.tempcontrol = new System.Windows.Forms.ComboBox();
-            this.pressuremode = new System.Windows.Forms.ListBox();
-            this.pressuredisplay = new System.Windows.Forms.Label();
+            this.interiorpressure = new System.Windows.Forms.Label();
             this.kollsmanwindow = new System.Windows.Forms.TextBox();
             this.altitude = new System.Windows.Forms.Label();
             this.rampressure = new System.Windows.Forms.NumericUpDown();
@@ -45,40 +43,23 @@ namespace AerodisplayHMI
             this.powerbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.temperature = new System.Windows.Forms.NumericUpDown();
+            this.pressuredisplay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rampressure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staticpressure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temperature)).BeginInit();
             this.SuspendLayout();
             // 
-            // tempcontrol
+            // interiorpressure
             // 
-            this.tempcontrol.FormattingEnabled = true;
-            this.tempcontrol.Location = new System.Drawing.Point(38, 384);
-            this.tempcontrol.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tempcontrol.Name = "tempcontrol";
-            this.tempcontrol.Size = new System.Drawing.Size(180, 33);
-            this.tempcontrol.TabIndex = 1;
-            // 
-            // pressuremode
-            // 
-            this.pressuremode.FormattingEnabled = true;
-            this.pressuremode.ItemHeight = 25;
-            this.pressuremode.Location = new System.Drawing.Point(38, 229);
-            this.pressuremode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pressuremode.Name = "pressuremode";
-            this.pressuremode.Size = new System.Drawing.Size(178, 104);
-            this.pressuremode.TabIndex = 2;
-            this.pressuremode.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // pressuredisplay
-            // 
-            this.pressuredisplay.AutoSize = true;
-            this.pressuredisplay.Location = new System.Drawing.Point(96, 200);
-            this.pressuredisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.pressuredisplay.Name = "pressuredisplay";
-            this.pressuredisplay.Size = new System.Drawing.Size(64, 25);
-            this.pressuredisplay.TabIndex = 3;
-            this.pressuredisplay.Text = "label1";
-            this.pressuredisplay.Click += new System.EventHandler(this.label1_Click);
+            this.interiorpressure.AutoSize = true;
+            this.interiorpressure.Location = new System.Drawing.Point(51, 215);
+            this.interiorpressure.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.interiorpressure.Name = "interiorpressure";
+            this.interiorpressure.Size = new System.Drawing.Size(154, 25);
+            this.interiorpressure.TabIndex = 3;
+            this.interiorpressure.Text = "Interior Pressure";
+            this.interiorpressure.Click += new System.EventHandler(this.label1_Click);
             // 
             // kollsmanwindow
             // 
@@ -126,6 +107,7 @@ namespace AerodisplayHMI
             0,
             0,
             0});
+            this.rampressure.ValueChanged += new System.EventHandler(this.rampressure_ValueChanged);
             // 
             // staticpressure
             // 
@@ -150,6 +132,7 @@ namespace AerodisplayHMI
             0,
             0,
             0});
+            this.staticpressure.ValueChanged += new System.EventHandler(this.staticpressure_ValueChanged);
             // 
             // airspeedindicator
             // 
@@ -232,6 +215,25 @@ namespace AerodisplayHMI
             this.label2.TabIndex = 18;
             this.label2.Text = "Static Pressure:";
             // 
+            // temperature
+            // 
+            this.temperature.Location = new System.Drawing.Point(69, 390);
+            this.temperature.Name = "temperature";
+            this.temperature.Size = new System.Drawing.Size(120, 30);
+            this.temperature.TabIndex = 19;
+            this.temperature.ValueChanged += new System.EventHandler(this.temperature_ValueChanged);
+            // 
+            // pressuredisplay
+            // 
+            this.pressuredisplay.AutoSize = true;
+            this.pressuredisplay.Location = new System.Drawing.Point(69, 274);
+            this.pressuredisplay.MinimumSize = new System.Drawing.Size(120, 0);
+            this.pressuredisplay.Name = "pressuredisplay";
+            this.pressuredisplay.Size = new System.Drawing.Size(120, 25);
+            this.pressuredisplay.TabIndex = 20;
+            this.pressuredisplay.Text = "0";
+            this.pressuredisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -240,6 +242,8 @@ namespace AerodisplayHMI
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(890, 553);
+            this.Controls.Add(this.pressuredisplay);
+            this.Controls.Add(this.temperature);
             this.Controls.Add(this.staticpressure);
             this.Controls.Add(this.rampressure);
             this.Controls.Add(this.label2);
@@ -252,25 +256,21 @@ namespace AerodisplayHMI
             this.Controls.Add(this.airspeedindicator);
             this.Controls.Add(this.altitude);
             this.Controls.Add(this.kollsmanwindow);
-            this.Controls.Add(this.pressuredisplay);
-            this.Controls.Add(this.pressuremode);
-            this.Controls.Add(this.tempcontrol);
+            this.Controls.Add(this.interiorpressure);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.rampressure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staticpressure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temperature)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox tempcontrol;
-        private System.Windows.Forms.ListBox pressuremode;
-        private System.Windows.Forms.Label pressuredisplay;
+        private System.Windows.Forms.Label interiorpressure;
         private System.Windows.Forms.TextBox kollsmanwindow;
         private System.Windows.Forms.Label altitude;
         private System.Windows.Forms.NumericUpDown rampressure;
@@ -283,6 +283,8 @@ namespace AerodisplayHMI
         private System.Windows.Forms.Button powerbutton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown temperature;
+        private System.Windows.Forms.Label pressuredisplay;
     }
 }
 

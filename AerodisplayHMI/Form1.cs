@@ -28,6 +28,11 @@ namespace AerodisplayHMI
 
             rampressure.Text = RamPressureData.getRamPressureData().ToString();
             airspeedindicator.Text = AirspeedIndicator.calculateVelocity(AirspeedIndicator.calculateDynamicPressure(float.Parse(rampressure.Text), float.Parse(staticpressure.Text))).ToString();
+
+            Controller.fly();
+            string pressure = InterriorPressureSensors.checkInteriorPressure().ToString();
+            pressuredisplay.Text = pressure;
+
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -70,13 +75,31 @@ namespace AerodisplayHMI
             {
                 powerbutton.Text = "Take Off";
                 Application.Idle -= Application_Idle;
-                // call Controller.descend() protocol
+                Controller.descend();
             }
         }
 
         private void airspeedindicator_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rampressure_ValueChanged(object sender, EventArgs e)
+        {
+            PitotTube.modifyRamAirPressure(float.Parse(rampressure.Text));
+            airspeedindicator.Text = AirspeedIndicator.calculateVelocity(AirspeedIndicator.calculateDynamicPressure(float.Parse(rampressure.Text), float.Parse(staticpressure.Text))).ToString();
+        }
+
+        private void staticpressure_ValueChanged(object sender, EventArgs e)
+        {
+            PitotTube.modifyStaticAirPressure(float.Parse(rampressure.Text));
+            airspeedindicator.Text = AirspeedIndicator.calculateVelocity(AirspeedIndicator.calculateDynamicPressure(float.Parse(rampressure.Text), float.Parse(staticpressure.Text))).ToString();
+        }
+
+        private void temperature_ValueChanged(object sender, EventArgs e)
+        {
+            int temp = Decimal.ToInt32(temperature.Value);
+            Intercooler.changeDesTemp(temp);
         }
     }
 }
