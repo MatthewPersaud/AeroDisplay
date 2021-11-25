@@ -70,7 +70,7 @@ namespace AerodisplayHMI
             // pressuredisplay
             // 
             this.pressuredisplay.AutoSize = true;
-            this.pressuredisplay.Location = new System.Drawing.Point(96, 199);
+            this.pressuredisplay.Location = new System.Drawing.Point(96, 200);
             this.pressuredisplay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pressuredisplay.Name = "pressuredisplay";
             this.pressuredisplay.Size = new System.Drawing.Size(64, 25);
@@ -92,12 +92,14 @@ namespace AerodisplayHMI
             // altitude
             // 
             this.altitude.AutoSize = true;
-            this.altitude.Location = new System.Drawing.Point(737, 247);
+            this.altitude.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altitude.Location = new System.Drawing.Point(710, 238);
             this.altitude.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.altitude.MinimumSize = new System.Drawing.Size(50, 50);
             this.altitude.Name = "altitude";
-            this.altitude.Size = new System.Drawing.Size(23, 25);
+            this.altitude.Size = new System.Drawing.Size(125, 50);
             this.altitude.TabIndex = 5;
-            this.altitude.Text = "0";
+            this.altitude.Text = "00000";
             // 
             // rampressure
             // 
@@ -156,7 +158,7 @@ namespace AerodisplayHMI
             // altitudelabel
             // 
             this.altitudelabel.AutoSize = true;
-            this.altitudelabel.Location = new System.Drawing.Point(724, 210);
+            this.altitudelabel.Location = new System.Drawing.Point(727, 200);
             this.altitudelabel.Name = "altitudelabel";
             this.altitudelabel.Size = new System.Drawing.Size(77, 25);
             this.altitudelabel.TabIndex = 15;

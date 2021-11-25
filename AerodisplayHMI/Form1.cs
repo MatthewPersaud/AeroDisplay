@@ -17,9 +17,10 @@ namespace AerodisplayHMI
             InitializeComponent();
         }
 
-        public void adjustAlt(string newalt)
+        private void Application_Idle(object sender, EventArgs e)
         {
-            altitude.Text = newalt;
+            string val = Altimeter.GetAltitude().ToString();
+            altitude.Text = val;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -53,14 +54,16 @@ namespace AerodisplayHMI
             if (powerbutton.Text == "Take Off") //take off!
             {
                 powerbutton.Text = "Land";
-                //call controller.ascend protocol
-                //then call controller.fly protocol?
-                Program.StartPlane(this);
-                
+                Controller.ascend(12000);
+                Application.Idle += Application_Idle;
+                //set static to 40
+                //ram will read from file
+
             }
             else if (powerbutton.Text == "Land") //landing the plane!
             {
                 powerbutton.Text = "Take Off";
+                Application.Idle -= Application_Idle;
                 // call Controller.descend() protocol
             }
         }
