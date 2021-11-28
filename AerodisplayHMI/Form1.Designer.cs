@@ -221,6 +221,11 @@ namespace AerodisplayHMI
             this.temperature.Name = "temperature";
             this.temperature.Size = new System.Drawing.Size(120, 30);
             this.temperature.TabIndex = 19;
+            this.temperature.Value = new decimal(new int[] {
+            22,
+            0,
+            0,
+            0});
             this.temperature.ValueChanged += new System.EventHandler(this.temperature_ValueChanged);
             // 
             // pressuredisplay
