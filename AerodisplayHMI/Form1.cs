@@ -74,6 +74,7 @@ namespace AerodisplayHMI
             else if (powerbutton.Text == "Land") //landing the plane!
             {
                 powerbutton.Text = "Take Off";
+                altitude.Text = "0";
                 Application.Idle -= Application_Idle;
                 Controller.descend();
             }
