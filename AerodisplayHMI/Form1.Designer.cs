@@ -53,7 +53,7 @@ namespace AerodisplayHMI
             // interiorpressure
             // 
             this.interiorpressure.AutoSize = true;
-            this.interiorpressure.Location = new System.Drawing.Point(70, 216);
+            this.interiorpressure.Location = new System.Drawing.Point(41, 200);
             this.interiorpressure.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.interiorpressure.Name = "interiorpressure";
             this.interiorpressure.Size = new System.Drawing.Size(154, 25);
@@ -63,7 +63,7 @@ namespace AerodisplayHMI
             // 
             // kollsmanwindow
             // 
-            this.kollsmanwindow.Location = new System.Drawing.Point(718, 331);
+            this.kollsmanwindow.Location = new System.Drawing.Point(718, 349);
             this.kollsmanwindow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kollsmanwindow.Name = "kollsmanwindow";
             this.kollsmanwindow.Size = new System.Drawing.Size(103, 30);
@@ -150,7 +150,7 @@ namespace AerodisplayHMI
             // 
             this.ailabel.AutoSize = true;
             this.ailabel.BackColor = System.Drawing.Color.White;
-            this.ailabel.Location = new System.Drawing.Point(366, 430);
+            this.ailabel.Location = new System.Drawing.Point(360, 430);
             this.ailabel.Name = "ailabel";
             this.ailabel.Size = new System.Drawing.Size(169, 25);
             this.ailabel.TabIndex = 12;
@@ -159,7 +159,7 @@ namespace AerodisplayHMI
             // temperaturelabel
             // 
             this.temperaturelabel.AutoSize = true;
-            this.temperaturelabel.Location = new System.Drawing.Point(64, 354);
+            this.temperaturelabel.Location = new System.Drawing.Point(47, 355);
             this.temperaturelabel.Name = "temperaturelabel";
             this.temperaturelabel.Size = new System.Drawing.Size(151, 25);
             this.temperaturelabel.TabIndex = 13;
@@ -168,7 +168,7 @@ namespace AerodisplayHMI
             // kwlabel
             // 
             this.kwlabel.AutoSize = true;
-            this.kwlabel.Location = new System.Drawing.Point(692, 301);
+            this.kwlabel.Location = new System.Drawing.Point(692, 319);
             this.kwlabel.Name = "kwlabel";
             this.kwlabel.Size = new System.Drawing.Size(169, 25);
             this.kwlabel.TabIndex = 14;
@@ -177,7 +177,7 @@ namespace AerodisplayHMI
             // altitudelabel
             // 
             this.altitudelabel.AutoSize = true;
-            this.altitudelabel.Location = new System.Drawing.Point(737, 200);
+            this.altitudelabel.Location = new System.Drawing.Point(734, 200);
             this.altitudelabel.Name = "altitudelabel";
             this.altitudelabel.Size = new System.Drawing.Size(77, 25);
             this.altitudelabel.TabIndex = 15;
@@ -231,7 +231,7 @@ namespace AerodisplayHMI
             // pressuredisplay
             // 
             this.pressuredisplay.AutoSize = true;
-            this.pressuredisplay.Location = new System.Drawing.Point(61, 274);
+            this.pressuredisplay.Location = new System.Drawing.Point(61, 253);
             this.pressuredisplay.MinimumSize = new System.Drawing.Size(120, 0);
             this.pressuredisplay.Name = "pressuredisplay";
             this.pressuredisplay.Size = new System.Drawing.Size(120, 25);
