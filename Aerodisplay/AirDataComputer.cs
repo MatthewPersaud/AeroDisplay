@@ -10,7 +10,7 @@ namespace Aerodisplay
 {
     class AirDataComputer
     {
-        int index = 0; //where in the data file we left off
+        int index = 0; //where in the data file we left off 
 
         public int GetIndex()
         {
